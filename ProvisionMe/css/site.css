@@ -1,0 +1,75 @@
+﻿body {
+    font-family: Verdana;
+    font-size:small;
+}
+
+#toast-container > .toast {
+    background-image: none !important;
+}
+
+    #toast-container > .toast:before {
+        position: fixed;
+        font-family: FontAwesome;
+        font-size: 24px;
+        line-height: 18px;
+        float: left;
+        color: #FFF;
+        padding-right: 0.5em;
+        margin: auto 0.5em auto -1.5em;
+    }
+/*#toast-container > .toast-warning:before {
+    content: "\f003";
+}*/
+#toast-container > .toast-error:before {
+    content: "\f057";
+}
+/*#toast-container > .toast-info:before {
+    content: "\f005";
+}*/
+#toast-container > .toast-success:before {
+    content: "\f058";
+}
+
+.spinner {
+    display: inline-block;
+    opacity: 0;
+    max-width: 50px;
+}
+
+.has-spinner.active {
+    cursor: progress;
+}
+
+    .has-spinner.active .spinner {
+        opacity: 1;
+        max-width: 50px;
+    }
+
+.left-inner-addon {
+    position: relative;
+}
+
+    .left-inner-addon input {
+        padding-left: 30px;
+    }
+
+    .left-inner-addon i {
+        position: absolute;
+        padding: 10px 12px;
+        pointer-events: none;
+    }
+
+.right-inner-addon {
+    position: relative;
+}
+
+    .right-inner-addon input {
+        padding-right: 30px;
+    }
+
+    .right-inner-addon i {
+        position: absolute;
+        right: 0;
+        padding: 10px 12px;
+        pointer-events: none;
+    }

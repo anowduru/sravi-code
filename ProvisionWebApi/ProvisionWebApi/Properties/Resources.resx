@@ -1,0 +1,833 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_MOETAccess" xml:space="preserve">
+    <value>Use MOET
+
+Declare 
+@LogonID varchar(30), 
+@EmailAlias varchar(50), 
+@LogonName varchar(50) 
+
+set @LogonID = @user
+SET @LogonName = substring(@user,charindex('\',@user)+1, len(@user)-charindex('\',@user))
+SET @EmailAlias = @LogonName + '@microsoft.com' 
+
+declare @SQL nvarchar(2000)
+if (not exists(SELECT * FROM logon WHERE LogonID = @LogonID))
+BEGIN
+
+insert into logon values (@LogonID, @EmailAlias, NULL, NULL, @LogonName, 'A', NULL, 'OPS', NULL, NULL, getdate(), 60, 0, getdate(), getdate(), NULL, NULL, NULL, NULL, 1) 
+insert into logonroletype 
+select Logonid = @LogonID, roletypeid = roletypeid, createddate = getdate(), lastmodifieddate = getdate(), createdbyName = @LogonID, modifiedbyname = @LogonID from logonroletype where logonid = 'europe\quintinc' 
+insert into MSContactSupportsLocation 
+select Logonid = @LogonID, saleslocationcode = saleslocationcode, createddate = getdate(), createdbyName = @LogonID, lastmodifieddate = getdate(),modifiedbyname = @LogonID from MSContactSupportsLocation where logonid = 'europe\quintinc' 
+
+END
+
+USE [master]
+
+IF NOT EXISTS(select * from sys.syslogins where name= @user)
+BEGIN
+	SET @SQL = 'CREATE LOGIN [' + @user + '] FROM WINDOWS WITH DEFAULT_DATABASE=[master]'
+	exec sp_executesql @SQL
+END
+
+USE [MOET]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+EXEC sp_addrolemember N'db_datareader', @user
+EXEC sp_addrolemember N'db_datawriter', @user
+
+USE [EPPSTGDB]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+EXEC sp_addrolemember N'db_datareader', @user
+EXEC sp_addrolemember N'db_datawriter', @user
+
+USE [MOETFeeds]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+EXEC sp_addrolemember N'db_datareader', @user
+EXEC sp_addrolemember N'db_datawriter', @user
+
+USE [MOETFeedsCDCStaging]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+EXEC sp_addrolemember N'db_datareader', @user
+EXEC sp_addrolemember N'db_datawriter', @user
+
+USE [MOETSupport]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+EXEC sp_addrolemember N'db_datareader', @user
+EXEC sp_addrolemember N'db_datawriter', @user
+
+Use MOET
+
+if (exists(SELECT * FROM logon WHERE LogonID = @LogonID))
+BEGIN
+	SELECT 1 [Status]
+END
+ELSE
+BEGIN
+	SELECT 0 [Status]
+END</value>
+  </data>
+  <data name="Query_MOPET" xml:space="preserve">
+    <value>IF NOT EXISTS(select * from Moptappr.dbo.Approvers1 (nolock) where ApproverAlias=@User and CurrentLevel='WWLP VP')
+BEGIN
+	INSERT INTO Moptappr.dbo.Approvers1 VALUES ((select max(approverId) + 1 from Moptappr.dbo.Approvers1),'India','India','India',@Name,@User,'WWLP VP','EPG')
+END
+
+IF NOT EXISTS(select * from Moptappr.dbo.Approvers2 (nolock) where ApproverAlias=@User and CurrentLevel='WWLP VP')
+BEGIN
+	INSERT INTO Moptappr.dbo.Approvers2 VALUES ((select max(approverId) + 1 from Moptappr.dbo.Approvers2), 'India','India','India',@Name,@User,'WWLP VP','EPG')
+END
+
+select * from Moptappr.dbo.Approvers1 (nolock) where ApproverAlias=@User and CurrentLevel='WWLP VP'
+Union
+select * from Moptappr.dbo.Approvers2 (nolock) where ApproverAlias=@User and CurrentLevel='WWLP VP'</value>
+  </data>
+  <data name="Query_MSLAccess" xml:space="preserve">
+    <value>Use Accessor
+
+declare @inputXML NVARCHAR(MAX), @AccessorID INT
+
+Set @inputXML=N'&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;AccessorRequest xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://MS.IT.Ops.MSLicense.TransactionService.DataContracts/"&gt;
+  &lt;Accessor&gt;
+    &lt;ApplicationGuID&gt;b139bf32-9d90-4bce-90c3-0f87beb4ba7c&lt;/ApplicationGuID&gt;
+    &lt;CredentialType&gt;NTAuth&lt;/CredentialType&gt;
+    &lt;CredentialValue&gt;' + @user + N'&lt;/CredentialValue&gt;
+    &lt;AccessorStatus&gt;
+      &lt;StatusName&gt;Active&lt;/StatusName&gt;
+    &lt;/AccessorStatus&gt;
+    &lt;LocaleCode&gt;en-US&lt;/LocaleCode&gt;
+    &lt;AccessorCredentials&gt;
+      &lt;AccessorCredential&gt;
+        &lt;CredentialType&gt;NTAuth&lt;/CredentialType&gt;
+        &lt;CredentialValue&gt;' + @user + N'&lt;/CredentialValue&gt;
+      &lt;/AccessorCredential&gt;
+    &lt;/AccessorCredentials&gt;
+    &lt;AccessorClaims&gt;
+      &lt;AccessorClaim&gt;
+        &lt;Type&gt;name&lt;/Type&gt;
+        &lt;Value&gt;' + @user + N'&lt;/Value&gt;
+      &lt;/AccessorClaim&gt;
+      &lt;AccessorClaim&gt;
+        &lt;Type&gt;ebac&lt;/Type&gt;
+        &lt;Value&gt;+ 0|127 + 1|127 2|4063&lt;/Value&gt;
+      &lt;/AccessorClaim&gt;
+    &lt;/AccessorClaims&gt;
+  &lt;/Accessor&gt;
+&lt;/AccessorRequest&gt;'
+
+exec Accessor.dbo.AccessorDetailSet_eMsl @inXml=@inputXML,@username=@user
+
+SELECT @AccessorID=AccessorID FROM Accessor.dbo.AccessorCredential WHERE Credential=@User AND CredentialTypeID=1
+
+DELETE FROM Accessor.dbo.AccessorCredentialRole WHERE AccessorID=@AccessorID AND RoleID=45 AND AccessorCredentialRoleStatusID=1     
+
+if LTrim(RTrim(@pcn)) !=''
+Begin
+	if(exists(select * from organization.dbo.organization (nolock) where publicnumber=@pcn))
+	Begin
+		DECLARE @OrgPCN VARCHAR(20)
+			   SET @OrgPCN = @PCN --give the EndCustomerPCN, this is agia
+		DECLARE @AccessorIDe VARCHAR(20)
+			   SELECT @AccessorIDe=CONVERT(VARCHAR(20),AccessorID) FROM AccessorCredential WITH (NOLOCK) WHERE Credential=@user AND CredentialTypeID='1'
+		DECLARE @AccessorGUIDe VARCHAR(60)
+			   SELECT @AccessorGUIDe=CONVERT(VARCHAR(60), CONVERT(UNIQUEIDENTIFIER, AccessOrGUID)) FROM Accessor WITH (NOLOCK) WHERE AccessorID = @AccessorIDe
+		DECLARE @ChangeControle varchar(20)
+			   SELECT @ChangeControle=CONVERT(VARCHAR(10),CONVERT(INT, ChangeControl)) FROM Accessor WITH (NOLOCK)  WHERE AccessorID = @AccessorIDe
+		DECLARE @OrgName VARCHAR(100)
+			   SELECT @OrgName=BusinessName FROM MSLicense.dbo.vCustomer WITH (NOLOCK) WHERE PublicCustomerNumber=@OrgPCN
+		DECLARE @namee VARCHAR(20)
+			   DECLARE @AEO1 VARCHAR(20)
+		DECLARE @AEO2 VARCHAR(20)
+		SELECT @namee=Value,@AEO1=CONVERT(VARCHAR(20),AccessorExternalObjectID) FROM AccessorExternalObject AEO WITH (NOLOCK) JOIN ExternalObject EO WITH (NOLOCK) 
+		ON EO.ExternalObjectID = AEO.ExternalObjectID AND AccessorID=@AccessorIDe AND AccessorExternalObjectStatusID=1 AND Name='name'
+		SELECT @AEO2=CONVERT(VARCHAR(20),AccessorExternalObjectID) FROM AccessorExternalObject AEO WITH (NOLOCK) JOIN ExternalObject EO WITH (NOLOCK) 
+		ON EO.ExternalObjectID = AEO.ExternalObjectID AND AccessorID=@AccessorIDe AND AccessorExternalObjectStatusID=1 AND Name='ebac'
+
+		SELECT @User 'UserID',@OrgPCN 'OrgPCN',@AccessorIDe 'AccessorID',@AccessorGUIDe 'AccessorGUID',@ChangeControle 'ChangeControl',@OrgName 'OrgName',@namee 'Name',@AEO1 'AEO1',@AEO2 'AEO2'
+
+		SET @OrgName = REPLACE(@OrgName,',','')
+		SET @OrgName = REPLACE(@OrgName,'&amp;','')
+		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   			SET @inputXML = N'&lt;?xml version="1.0" encoding="utf-16"?&gt;
+		&lt;AccessorRequest xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://MS.IT.Ops.MSLicense.TransactionService.DataContracts/"&gt;
+			&lt;Accessor&gt;
+				&lt;AccessorGuID&gt;'+@AccessorGUIDe+'&lt;/AccessorGuID&gt;
+				&lt;ChangeControl&gt;'+@ChangeControle+N'&lt;/ChangeControl&gt;
+				&lt;ApplicationGuID&gt;b139bf32-9d90-4bce-90c3-0f87beb4ba7c&lt;/ApplicationGuID&gt;
+				&lt;CredentialType&gt;NTAuth&lt;/CredentialType&gt;
+				&lt;CredentialValue&gt;'+@user+'&lt;/CredentialValue&gt;
+				&lt;AccessorStatus&gt;
+				&lt;StatusName&gt;Active&lt;/StatusName&gt;
+				&lt;/AccessorStatus&gt;
+				&lt;LocaleCode&gt;en-US&lt;/LocaleCode&gt;
+				&lt;AccessorCredentials&gt;
+				&lt;AccessorCredential&gt;
+						&lt;CredentialType&gt;NTAuth&lt;/CredentialType&gt;
+						&lt;CredentialValue&gt;'+@user+'&lt;/CredentialValue&gt;
+				&lt;/AccessorCredential&gt;
+				&lt;/AccessorCredentials&gt;
+				&lt;AccessorClaims&gt;
+				&lt;AccessorClaim&gt;
+						&lt;AccessorExternalObjectID&gt;'+@AEO1+'&lt;/AccessorExternalObjectID&gt;
+						&lt;Type&gt;name&lt;/Type&gt;
+						&lt;Value&gt;'+@namee+'&lt;/Value&gt;
+				&lt;/AccessorClaim&gt;
+				&lt;AccessorClaim&gt;
+						&lt;AccessorExternalObjectID&gt;'+@AEO2+'&lt;/AccessorExternalObjectID&gt;
+						&lt;Type&gt;ebac&lt;/Type&gt;
+						&lt;Value&gt;+ 0|8 + 1|64 2|448&lt;/Value&gt;
+				&lt;/AccessorClaim&gt;
+				&lt;AccessorClaim&gt;
+						&lt;Type&gt;organizationpcn&lt;/Type&gt;
+						&lt;Value&gt;'+@OrgPCN+'&lt;/Value&gt;
+						&lt;Description&gt;'+@OrgName+'&lt;/Description&gt;
+				&lt;/AccessorClaim&gt;
+				&lt;/AccessorClaims&gt;
+			&lt;/Accessor&gt;
+		&lt;/AccessorRequest&gt;'       	    
+		EXEC Accessor.dbo.AccessorDetailSet_eMsl @inXml=@inputXML,@UserName=@user
+
+		SELECT @AccessorID=AccessorID FROM Accessor.dbo.AccessorCredential WHERE Credential=@User AND CredentialTypeID=1
+
+		DELETE FROM Accessor.dbo.AccessorCredentialRole WHERE AccessorID=@AccessorID AND RoleID=45 AND AccessorCredentialRoleStatusID=1     
+
+	End
+	else
+	begin
+
+	if not exists(select * from sys.messages where message_id=900001)
+	begin
+		exec sp_addmessage @msgnum = 900001,
+				  @severity = 16,
+				  @msgtext = N'The PCN does not exist.';
+
+	end
+
+	RAISERROR(900001,16,1);
+		
+	End
+end</value>
+  </data>
+  <data name="Query_MSL_PQ" xml:space="preserve">
+    <value>Use Accessor
+
+declare @inputXML NVARCHAR(MAX), @AccessorID INT
+
+Set @inputXML=N'&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;AccessorRequest xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://MS.IT.Ops.MSLicense.TransactionService.DataContracts/"&gt;
+  &lt;Accessor&gt;
+    &lt;ApplicationGuID&gt;b139bf32-9d90-4bce-90c3-0f87beb4ba7c&lt;/ApplicationGuID&gt;
+    &lt;CredentialType&gt;NTAuth&lt;/CredentialType&gt;
+    &lt;CredentialValue&gt;' + @user + N'&lt;/CredentialValue&gt;
+    &lt;AccessorStatus&gt;
+      &lt;StatusName&gt;Active&lt;/StatusName&gt;
+    &lt;/AccessorStatus&gt;
+    &lt;LocaleCode&gt;en-US&lt;/LocaleCode&gt;
+    &lt;AccessorCredentials&gt;
+      &lt;AccessorCredential&gt;
+        &lt;CredentialType&gt;NTAuth&lt;/CredentialType&gt;
+        &lt;CredentialValue&gt;' + @user + N'&lt;/CredentialValue&gt;
+      &lt;/AccessorCredential&gt;
+    &lt;/AccessorCredentials&gt;
+    &lt;AccessorClaims&gt;
+      &lt;AccessorClaim&gt;
+        &lt;Type&gt;name&lt;/Type&gt;
+        &lt;Value&gt;' + @user + N'&lt;/Value&gt;
+      &lt;/AccessorClaim&gt;
+      &lt;AccessorClaim&gt;
+        &lt;Type&gt;ebac&lt;/Type&gt;
+        &lt;Value&gt;+ 0|127 + 1|127 2|4063&lt;/Value&gt;
+      &lt;/AccessorClaim&gt;
+	  &lt;AccessorClaim&gt;
+        &lt;Type&gt;IsQuoteUser&lt;/Type&gt;
+        &lt;Value&gt;T&lt;/Value&gt;
+      &lt;/AccessorClaim&gt;
+      &lt;AccessorClaim&gt;
+        &lt;Type&gt;PartnerQuoteEmpowermentLevel&lt;/Type&gt;
+        &lt;Value&gt;W&lt;/Value&gt;
+      &lt;/AccessorClaim&gt;
+    &lt;/AccessorClaims&gt;
+	&lt;AccessorRoles&gt;
+      &lt;AccessorRole&gt;
+        &lt;Type&gt;CPQ&lt;/Type&gt;
+        &lt;Value&gt;I&lt;/Value&gt;
+      &lt;/AccessorRole&gt;
+    &lt;/AccessorRoles&gt;
+  &lt;/Accessor&gt;
+&lt;/AccessorRequest&gt;'
+
+exec Accessor.dbo.AccessorDetailSet_eMsl @inXml=@inputXML,@username=@user
+
+SELECT @AccessorID=AccessorID FROM Accessor.dbo.AccessorCredential WHERE Credential=@User AND CredentialTypeID=1
+
+IF NOT EXISTS(SELECT * FROM Accessor.dbo.AccessorCredentialRole(NOLOCK) WHERE AccessorID = @AccessorID AND RoleID=45 AND AccessorCredentialRoleStatusID=1)
+BEGIN
+INSERT INTO Accessor.[dbo].[AccessorCredentialRole]           
+           ([CreatedBy]
+           ,[CreatedDate]
+           ,[ModifiedBy]
+           ,[ModifiedDate]
+           ,[AccessorCredentialRoleStatusID]
+           ,[RoleID]
+           ,[AccessorID])
+     VALUES
+           (SYSTEM_USER
+           ,GETDATE()
+           ,SYSTEM_USER
+           ,GETDATE()
+           ,1
+           ,45
+           ,@AccessorID)
+END
+
+if LTrim(RTrim(@pcn)) !=''
+Begin
+	if(exists(select * from organization.dbo.organization (nolock) where publicnumber=@pcn))
+	Begin
+		DECLARE @OrgPCN VARCHAR(20)
+			   SET @OrgPCN = @PCN --give the EndCustomerPCN, this is agia
+		DECLARE @AccessorIDe VARCHAR(20)
+			   SELECT @AccessorIDe=CONVERT(VARCHAR(20),AccessorID) FROM AccessorCredential WITH (NOLOCK) WHERE Credential=@user AND CredentialTypeID='1'
+		DECLARE @AccessorGUIDe VARCHAR(60)
+			   SELECT @AccessorGUIDe=CONVERT(VARCHAR(60), CONVERT(UNIQUEIDENTIFIER, AccessOrGUID)) FROM Accessor WITH (NOLOCK) WHERE AccessorID = @AccessorIDe
+		DECLARE @ChangeControle varchar(20)
+			   SELECT @ChangeControle=CONVERT(VARCHAR(10),CONVERT(INT, ChangeControl)) FROM Accessor WITH (NOLOCK)  WHERE AccessorID = @AccessorIDe
+		DECLARE @OrgName VARCHAR(100)
+			   SELECT @OrgName=BusinessName FROM MSLicense.dbo.vCustomer WITH (NOLOCK) WHERE PublicCustomerNumber=@OrgPCN
+		DECLARE @namee VARCHAR(20)
+			   DECLARE @AEO1 VARCHAR(20)
+		DECLARE @AEO2 VARCHAR(20)
+		SELECT @namee=Value,@AEO1=CONVERT(VARCHAR(20),AccessorExternalObjectID) FROM AccessorExternalObject AEO WITH (NOLOCK) JOIN ExternalObject EO WITH (NOLOCK) 
+		ON EO.ExternalObjectID = AEO.ExternalObjectID AND AccessorID=@AccessorIDe AND AccessorExternalObjectStatusID=1 AND Name='name'
+		SELECT @AEO2=CONVERT(VARCHAR(20),AccessorExternalObjectID) FROM AccessorExternalObject AEO WITH (NOLOCK) JOIN ExternalObject EO WITH (NOLOCK) 
+		ON EO.ExternalObjectID = AEO.ExternalObjectID AND AccessorID=@AccessorIDe AND AccessorExternalObjectStatusID=1 AND Name='ebac'
+
+		SELECT @User 'UserID',@OrgPCN 'OrgPCN',@AccessorIDe 'AccessorID',@AccessorGUIDe 'AccessorGUID',@ChangeControle 'ChangeControl',@OrgName 'OrgName',@namee 'Name',@AEO1 'AEO1',@AEO2 'AEO2'
+
+		SET @OrgName = REPLACE(@OrgName,',','')
+		SET @OrgName = REPLACE(@OrgName,'&amp;','')
+		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   		   			SET @inputXML = N'&lt;?xml version="1.0" encoding="utf-16"?&gt;
+		&lt;AccessorRequest xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://MS.IT.Ops.MSLicense.TransactionService.DataContracts/"&gt;
+			&lt;Accessor&gt;
+				&lt;AccessorGuID&gt;'+@AccessorGUIDe+'&lt;/AccessorGuID&gt;
+				&lt;ChangeControl&gt;'+@ChangeControle+N'&lt;/ChangeControl&gt;
+				&lt;ApplicationGuID&gt;b139bf32-9d90-4bce-90c3-0f87beb4ba7c&lt;/ApplicationGuID&gt;
+				&lt;CredentialType&gt;NTAuth&lt;/CredentialType&gt;
+				&lt;CredentialValue&gt;'+@user+'&lt;/CredentialValue&gt;
+				&lt;AccessorStatus&gt;
+				&lt;StatusName&gt;Active&lt;/StatusName&gt;
+				&lt;/AccessorStatus&gt;
+				&lt;LocaleCode&gt;en-US&lt;/LocaleCode&gt;
+				&lt;AccessorCredentials&gt;
+				&lt;AccessorCredential&gt;
+						&lt;CredentialType&gt;NTAuth&lt;/CredentialType&gt;
+						&lt;CredentialValue&gt;'+@user+'&lt;/CredentialValue&gt;
+				&lt;/AccessorCredential&gt;
+				&lt;/AccessorCredentials&gt;
+				&lt;AccessorClaims&gt;
+				&lt;AccessorClaim&gt;
+						&lt;AccessorExternalObjectID&gt;'+@AEO1+'&lt;/AccessorExternalObjectID&gt;
+						&lt;Type&gt;name&lt;/Type&gt;
+						&lt;Value&gt;'+@namee+'&lt;/Value&gt;
+				&lt;/AccessorClaim&gt;
+				&lt;AccessorClaim&gt;
+						&lt;AccessorExternalObjectID&gt;'+@AEO2+'&lt;/AccessorExternalObjectID&gt;
+						&lt;Type&gt;ebac&lt;/Type&gt;
+						&lt;Value&gt;+ 0|8 + 1|64 2|448&lt;/Value&gt;
+				&lt;/AccessorClaim&gt;
+				&lt;AccessorClaim&gt;
+						&lt;Type&gt;organizationpcn&lt;/Type&gt;
+						&lt;Value&gt;'+@OrgPCN+'&lt;/Value&gt;
+						&lt;Description&gt;'+@OrgName+'&lt;/Description&gt;
+				&lt;/AccessorClaim&gt;
+				 &lt;AccessorClaim&gt;
+        &lt;Type&gt;IsQuoteUser&lt;/Type&gt;
+        &lt;Value&gt;T&lt;/Value&gt;
+      &lt;/AccessorClaim&gt;
+      &lt;AccessorClaim&gt;
+        &lt;Type&gt;PartnerQuoteEmpowermentLevel&lt;/Type&gt;
+        &lt;Value&gt;W&lt;/Value&gt;
+      &lt;/AccessorClaim&gt;
+				&lt;/AccessorClaims&gt;
+				&lt;AccessorRoles&gt;
+      &lt;AccessorRole&gt;
+        &lt;Type&gt;CPQ&lt;/Type&gt;
+        &lt;Value&gt;I&lt;/Value&gt;
+      &lt;/AccessorRole&gt;
+    &lt;/AccessorRoles&gt;
+			&lt;/Accessor&gt;
+		&lt;/AccessorRequest&gt;'       	    
+		EXEC Accessor.dbo.AccessorDetailSet_eMsl @inXml=@inputXML,@UserName=@user
+
+		SELECT @AccessorID=AccessorID FROM Accessor.dbo.AccessorCredential WHERE Credential=@User AND CredentialTypeID=1
+
+IF NOT EXISTS(SELECT * FROM Accessor.dbo.AccessorCredentialRole(NOLOCK) WHERE AccessorID = @AccessorID AND RoleID=45 AND AccessorCredentialRoleStatusID=1)
+BEGIN
+INSERT INTO Accessor.[dbo].[AccessorCredentialRole]           
+           ([CreatedBy]
+           ,[CreatedDate]
+           ,[ModifiedBy]
+           ,[ModifiedDate]
+           ,[AccessorCredentialRoleStatusID]
+           ,[RoleID]
+           ,[AccessorID])
+     VALUES
+           (SYSTEM_USER
+           ,GETDATE()
+           ,SYSTEM_USER
+           ,GETDATE()
+           ,1
+           ,45
+           ,@AccessorID)
+END
+	End
+	else
+	begin
+
+	if not exists(select * from sys.messages where message_id=900001)
+	begin
+		exec sp_addmessage @msgnum = 900001,
+				  @severity = 16,
+				  @msgtext = N'The PCN does not exist.';
+
+	end
+
+	RAISERROR(900001,16,1);
+		
+	End
+end</value>
+  </data>
+  <data name="Query_MSQuote" xml:space="preserve">
+    <value>Declare @p1 xml
+set @p1=convert(xml,N'&lt;BulkUpdates applicationGUID="5B4D4550-0260-49ED-98EF-3D7D412B1D23" credentialType="MSFTE" overrideRoles="false"&gt;
+  &lt;Records&gt;
+    &lt;Record&gt;
+      &lt;Claims&gt;
+        &lt;Alias&gt;'+@alias+'&lt;/Alias&gt;
+        &lt;FirstName&gt;'+@fname+'&lt;/FirstName&gt;
+        &lt;LastName&gt;'+@lname+'&lt;/LastName&gt;
+        &lt;BusinessEmail&gt;'+@email+'&lt;/BusinessEmail&gt;
+        &lt;EmpowermentLevel&gt;BD&lt;/EmpowermentLevel&gt;
+        &lt;ApproveEmpowermentLevel&gt;Dummy&lt;/ApproveEmpowermentLevel&gt;
+        &lt;IsMsUser&gt;True&lt;/IsMsUser&gt;
+      &lt;/Claims&gt;
+      &lt;Roles&gt;
+        &lt;Role name="MQ1" action="'+@MQ1+'"/&gt;
+        &lt;Role name="MQ2" action="'+@MQ2+'"/&gt;
+        &lt;Role name="MQ3" action="'+@MQ3+'"/&gt;
+        &lt;Role name="MQ4" action="'+@MQ4+'"/&gt;
+        &lt;Role name="QSU" action="'+@QSU+'"/&gt;
+        &lt;Role name="MQF" action="'+@MQF+'"/&gt;
+        &lt;Role name="QV" action="'+@QV+'"/&gt;
+      &lt;/Roles&gt;
+    &lt;/Record&gt;
+  &lt;/Records&gt;
+&lt;/BulkUpdates&gt;')
+exec Accessor.dbo.AccessorUpdate @inputXML=@p1
+
+exec Accessor.dbo.GetClaims @ApplicationGUID=N'5B4D4550-0260-49ED-98EF-3D7D412B1D23',@CredentialType=N'MSFTE',@CredentialValue=@alias,@ChallengeType=N'',@ChallengeValue=N''</value>
+  </data>
+  <data name="Query_VBUIAcess" xml:space="preserve">
+    <value>use MSLicense
+declare @username varchar(100)
+set @username = substring(@user,charindex('\',@user)+1, len(@user)-charindex('\',@user))
+declare @SQL nvarchar(2000)
+if (not exists(select * from mscontact where emailalias = @username))
+BEGIN
+	set @SQL = 
+	'
+	insert mscontact(
+
+	OperationsCenterCode,
+
+	SalesLocationCode,
+
+	OfficeLocation,
+
+	LogonID,
+
+	EMailAlias,
+
+	Name,
+
+	PhoneNumber,
+
+	FaxNumber,
+
+	CreatedDate,
+
+	CreatedByUser,
+
+	LastModifiedDate,
+
+	ModifiedByUser)
+
+	values ( 
+
+	''USO'',
+
+	null,
+
+	''10'',
+
+	''' + @username + ''', ''' 
+	+ @username + ''', '''
+	+ @username + ''', '  +  '''206-703-5437'',' +  '''206-882-8080'',' + 
+
+	'GETDATE(),
+
+	''auto-generated'',
+
+	GETDATE(),
+
+	''auto-generated'')'
+	-- print @sql
+	exec (@SQL)
+
+	-- Be sure to do the insert
+
+	-- below after the query above
+
+	insert membership values(9, @@Identity)
+END
+
+USE [master]
+
+IF NOT EXISTS(select * from sys.syslogins where name= @user)
+BEGIN
+	SET @SQL = 'CREATE LOGIN [' + @user + '] FROM WINDOWS WITH DEFAULT_DATABASE=[master]'
+	exec sp_executesql @SQL
+END
+
+USE [Accessor]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+USE [Accessor]
+
+EXEC sp_addrolemember N'db_datareader', @user
+
+USE [APPSUPPORT]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+USE [APPSUPPORT]
+
+EXEC sp_addrolemember N'db_datareader', @user
+
+USE [MSLicense]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+USE [MSLicense]
+
+EXEC sp_addrolemember N'db_datareader', @user
+
+USE [MSLicense]
+
+EXEC sp_addrolemember N'MSLAppRole', @user
+
+USE [MSLicense]
+
+EXEC sp_addrolemember N'MSLicenseEXEC', @user
+
+USE [MSLicense]
+
+EXEC sp_addrolemember N'VLCMMSLAppRole', @user
+
+USE [RequestedOrder]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+EXEC sp_addrolemember N'db_datareader', @user
+
+USE [MSLInterface]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+USE [MSLInterface]
+
+EXEC sp_addrolemember N'db_datareader', @user
+
+USE [MSLInterface]
+
+EXEC sp_addrolemember N'MSLAppRole', @user
+
+USE [Organization]IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+USE [Organization]
+
+EXEC sp_addrolemember N'db_datareader', @user
+
+USE [Organization]
+
+EXEC sp_addrolemember N'MSLAppRole', @user
+
+USE [Organization]
+
+EXEC sp_addrolemember N'MSLicenseEXEC', @user
+
+USE [Shipment]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+USE [Shipment]
+
+EXEC sp_addrolemember N'db_datareader', @user
+
+USE [Shipment]
+
+EXEC sp_addrolemember N'MSLAppRole', @user
+
+--USE [TesterArea]
+
+--IF NOT EXISTS(select * from sys.database_principals where name= @user)
+--BEGIN
+--	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+--	exec sp_executesql @sql
+--	IF @@ERROR=0
+--		PRINT '[' + @user + '] user created';
+--END
+
+--USE [TesterArea]
+
+--EXEC sp_addrolemember N'db_datareader', @user
+
+USE [VL_Accessor]
+
+IF NOT EXISTS(select * from sys.database_principals where name= @user)
+BEGIN
+	set @sql = 'create user [' + @user + '] for login [' + @user +']'
+
+	exec sp_executesql @sql
+	IF @@ERROR=0
+		PRINT '[' + @user + '] user created';
+END
+
+USE [VL_Accessor]
+
+EXEC sp_addrolemember N'db_datareader', @user</value>
+  </data>
+</root>

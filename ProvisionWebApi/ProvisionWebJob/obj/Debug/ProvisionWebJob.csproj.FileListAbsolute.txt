@@ -1,6 +1,0 @@
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionWebJob\bin\Debug\ProvisionWebJob.exe.config
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionWebJob\bin\Debug\ProvisionWebJob.exe
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionWebJob\bin\Debug\ProvisionWebJob.pdb
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionWebJob\obj\Debug\ProvisionWebJob.csprojResolveAssemblyReference.cache
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionWebJob\obj\Debug\ProvisionWebJob.exe
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionWebJob\obj\Debug\ProvisionWebJob.pdb

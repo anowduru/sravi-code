@@ -1,6 +1,0 @@
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionMeClient\bin\Debug\ProvisionMeClient.exe.config
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionMeClient\bin\Debug\ProvisionMeClient.exe
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionMeClient\bin\Debug\ProvisionMeClient.pdb
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionMeClient\obj\Debug\ProvisionMeClient.csprojResolveAssemblyReference.cache
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionMeClient\obj\Debug\ProvisionMeClient.exe
-D:\SharedCode\QATools\Branches\Tools\ProvisionWebApi\ProvisionMeClient\obj\Debug\ProvisionMeClient.pdb
